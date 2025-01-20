@@ -19,12 +19,12 @@ def generateKeysFromMnemonic(mnemonic: str):
    
 
     masterKey = Bip44.FromSeed(seed, coinType).DeriveDefaultPath() # For coins other than Solana, derive the default path
-    return masterKey.PublicKey().ToAddress(), masterKey.PrivateKey().Raw().ToHex() # Return public adress and private key in hex format
+    return masterKey.PublicKey().ToAddress(), masterKey.PrivateKey().Raw().ToHex() # Return public address and private key in hex format
 
 
 
 if __name__ == "__main__":
     mnemonic = input("Enter your mnemonic phrase(12 or 24 words): ")
     public_address, private_key = generateKeysFromMnemonic(mnemonic)
-    print(f"Public Adress: {public_address}")
+    print(f"Public Address: {public_address}")
     print(f"Private Key: {private_key}")
